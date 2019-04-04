@@ -1,0 +1,400 @@
+/*
+Theme Name: blog_template
+Author: Guilherme Lucas / Vitor Alburqueque
+Description: Tema para blog Wordpress
+*/
+
+* {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.navbar.menu {
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link.menu {
+	color: #dac877 !important;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+}
+
+.nav-link.menu:hover {
+	color: #dfda58 !important;
+}
+
+.captura-input {
+	height: 60px !important;
+	border-radius: 0 !important;
+}
+
+.captura-btn {
+	border-radius: 0 !important;
+}
+
+.captura-title-top {
+	color: #ffffff;
+}
+
+.captura-title-bottom {
+	color: #ffffff;
+	font-size: 1.4rem;
+}
+
+.captura-ps {
+	color: #ffffff;
+	font-size: 12px;
+}
+
+.btn.btn-gold {
+	background-color: #dac877;
+	color: #ffffff;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+}
+
+.cat-post-date {
+	font-size: 0.8rem;
+	color: #dabc7c;
+}
+
+.cat-post-title {
+	font-size: 1.6rem;
+	color: #ffffff;
+}
+
+.cat-post-separador {
+	border-top: 2px solid rgba(176, 176, 176, 0.2);;
+	border-radius: 5rem;
+}
+
+.cat-post-excerpt {
+	color: #ffffff;
+	font-size: 0.9rem;
+}
+
+.data {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-right: 1rem;
+}
+
+.data.top-potdate {
+	color: #dabc7c;
+	font-size: 0.7rem;
+
+}
+
+.data.categoria{
+	margin-left: 1rem;
+}
+
+.img-list-post-blog {
+	width: 100%;
+	height: auto;
+}
+
+
+.img-list-post-blog:hover {
+opacity: 0.8; 
+-moz-opacity: 0.0;
+transition-property: all;
+}
+
+.list-post-blog {
+	 padding-top:4rem;
+	 padding-left: 3rem;
+	 padding-right: 5rem;
+
+}
+
+.div-categorias {
+
+}
+
+a.leiamais {
+	color: #A28851;
+  	font-family: 'Playfair Display', serif;
+  	font-weight: 400;
+}
+
+ul {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin: 0px;
+}
+
+li.list-li:nth-child(even) {
+	background: #FFF;
+	list-style: none;
+}
+
+li.list-li:nth-child(odd) {
+	background: #F7F7F7;
+	list-style: none;
+}
+
+.row.li-post {
+	margin-right: 0px;
+}
+
+
+.tituto-post {
+	color: #000;
+	text-decoration: none;
+}
+
+.tituto-post:hover {
+	color: #A28851;
+	text-decoration: none;
+	text-decoration-line: none;
+}
+
+.tituto-post:visited {
+	color: #fff;
+	text-decoration: none;
+	text-decoration-line: none;
+}
+
+
+a:link {
+text-decoration:none;
+}
+a:visited {
+text-decoration:none;
+}
+a:hover {
+text-decoration:underline;
+}
+
+
+.img-optin-form {
+	width: 100%;
+	height: auto;
+
+}
+
+.optin-form {
+	background-color: #4F1A30;
+}
+
+.img-post {
+	padding: 0px;
+}
+
+.optin-campos-form {
+	padding: 15%;
+}
+
+.form-input-optin {
+
+	    margin-top: -60px;
+}
+
+
+.headline-optin {
+    color: #fff;
+    padding: 90px 90px 0px 90px;
+}
+
+.headline-optin-title{
+  	font-family: 'Playfair Display', serif;
+}
+
+
+.sessao-optin {
+margin-top: 50px;
+}
+
+
+.rodape {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+	padding-top: 3rem;
+	padding-bottom: 3rem; 
+	background-color: #F7F7F7;
+	color: #6F6F6F;
+	text-align: center;
+}
+
+.imagem-ico-rodape,
+.logo-rodape{
+	vertical-align: middle;
+	height: auto;
+	padding: 12px
+}
+
+.logo-rodape {
+	max-width: 300px;
+	width: 150px;
+}
+
+.logo-header {
+	max-width: 300px;
+	width: 120px;
+}
+
+.form-input-optin-topo{
+
+}
+
+.optin-campos-form-topo{
+    padding: 0% 18% 0% 18%;
+}
+
+.topo{
+	padding-bottom: 50px;
+	background-color: #6B2642;
+}
+
+.title-top {
+	font-size: 22px;
+	font-weight: 300;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	color: #FFF;
+}
+
+.text-subtitle-form {
+	text-align: center;
+	color: #FFF;
+	font-size: 0.8em;
+	margin-top: -20px !important;
+}
+
+.main-menu {
+	color: #FFF;
+}
+
+.tituto-toppost {
+	padding-right:2px; 
+	color: #FFF;
+	text-decoration: none;
+	font-size: 1.6em;
+}
+
+.descricao-toppost {
+	color: #FFF;
+	font-size: 14px;
+}
+
+.bloco-top-post {
+	padding: 7rem 3em 0em 3em;
+}
+
+.categorias-toppost {
+	margin-top: 30px;
+	margin-bottom: 0px !important;
+
+}
+
+.nav-link-cat-top-post {
+	color: #dfda58 !important;
+	font-weight: 400;
+}
+
+.nav-link-cat-top-post:hover > .nav-item-span{
+	border-bottom: 2px solid;
+	color: #dfda58 !important;
+	transition: .1s;
+}
+
+.cat-top-post-separador {
+    margin-bottom: 2rem;
+    border-radius: 5rem;
+    border-top: 3px solid rgba(175, 175, 175, 0);
+}
+
+.rodape-endereco {
+	text-align: right;
+}
+
+
+.headline-optin-topo {
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.paginacao-footer{
+margin-top: 0px;
+}
+
+/*DISPOSITIVOS MOVEIS*/
+
+@media (max-width: 575.98px) {
+
+	.data,
+	.categoria {
+		font-size: 10px !important;
+
+	}
+}
+
+.title-top {
+	font-size: 1em;
+
+}
+
+.optin-campos-form-topo {
+    padding: 0% 7% 0% 7%;
+}
+
+
+.rodape-endereco {
+	text-align: center;
+	padding: 10px 32px;
+}
+
+.data.categoria{
+	margin-left: 1rem;
+	font-size: 0.7em;
+}
+
+.headline-optin {
+	padding: 30px 30px 0px 30px
+}
+
+.headline-optin-title{
+	font-size: 1.3em;
+}
+
+.optin-campos-form {
+    padding: 76px 30px 30px 30px;
+}
+
+.list-post-blog {
+	padding-left: 2rem !important;
+    padding-right: 1rem !important;
+	padding-top: 3rem;
+	width: 100%;
+	height: auto;
+	margin-bottom: 100px;
+}
+
+.text-subtitle-form {
+	    padding: 16px 48px;
+}
+
+.bloco-top-post {
+/*    border: 1px;*/
+    padding: 2rem 1em 0em 1em !important;
+    border-color: #792d4a;
+    border-style: solid;
+    margin-bottom: 40px;
+/*    border-radius: 16px;*/
+    background-color: #61233c;
+ }
+
+ .headline-optin-topo {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.paginacao-footer{
+    margin-top: -98px;
+}
+
+.div-categorias {
+	display: none;
+}
