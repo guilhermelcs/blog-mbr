@@ -89,71 +89,119 @@
 </section>
 
 <!-- AQUI COMEÇA A LISTAGEM DOS POST -->
-
-	<section>
-		<ul>			
-			<li class="list-li">
-				<div class="row li-post ">
-					<div class="col-sm-5"><a href="#"><img class="img-list-post-blog" src="<?php bloginfo('template_url'); ?>/assets/img/1.png"></a></div>	
-						<div class="col-sm-6 list-post-blog">
-						<h5 class="data">20/02/2019</h5> | <h5 class="data categoria">Massagem Tantrica</h5>
-						<br>
-						<a href="#"><h2 class="tituto-post">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h2></a>
-						
-						<p>Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere</p>
-						<a class="leiamais" href="#">Leia mais <i style='font-size:14px' class='fas'>&#xf105;</i></a>
-					</div>
-					<div class="col-sm-1"></div>
-				</div>
-			</li>
-
-			<li class="list-li">
-				<div class="row li-post">
-					<div class="col-sm-5"> <img class="img-list-post-blog" src="<?php bloginfo('template_url'); ?>/assets/img/3.png"></div>	
-						<div class="col-sm-6 list-post-blog">
-						<h5 class="data">20/02/2019</h5> | <h5 class="data categoria">Massagem Tantrica</h5>
-						<br>
-						<h2>Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h2>
-						<p>Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere</p>
-						<a class="leiamais" href="#">Leia mais <i style='font-size:14px' class='fas'>&#xf105;</i></a>
-					</div>
-					<div class="col-sm-1"></div>
-				</div>
-			</li>
-
-			<li class="list-li">
-				<div class="row li-post">
-					<div class="col-sm-5"> <img class="img-list-post-blog" src="<?php bloginfo('template_url'); ?>/assets/img/2.png"></div>	
-						<div class="col-sm-6 list-post-blog">
-						<h5 class="data">20/02/2019</h5> | <h5 class="data categoria">Massagem Tantrica</h5>
-						<br>
-						<h2>Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h2>
-						<p>Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere</p>
-						<a class="leiamais" href="#">Leia mais <i style='font-size:14px' class='fas'>&#xf105;</i></a>
-					</div>
-					<div class="col-sm-1"></div>
-				</div>
-			</li>
-
-			<li class="list-li">
-				<div class="row li-post ">
-					<div class="col-sm-5"> <img class="img-list-post-blog" src="<?php bloginfo('template_url'); ?>/assets/img/4.png"></div>	
-						<div class="col-sm-6 list-post-blog">
-						<h5 class="data">20/02/2019</h5> | <h5 class="data categoria">Massagem Tantrica</h5>
-						<br>
-						<h2>Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h2>
-						<p>Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere</p>
-						<a class="leiamais" href="#">Leia mais <i style='font-size:14px' class='fas'>&#xf105;</i></a>
-					</div>
-					<div class="col-sm-1"></div>
-				</div>
-			</li>	
-
-		</ul>
-
+<section>
+    <div class="container-fluid">
+        <div class="row bg-gray">
+            <div class="col-12 col-md-5 ml-5-">
+                <div class="blog-post-img-wrapper">
+                    <a href="#"><img class="blog-post-img" src="<?php bloginfo('template_url'); ?>/assets/img/1.png"></a>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 my-auto ml-5-">
+                <div class="d-none d-md-block blog-post-content-wrapper py-5 pr-10">
+                    <h5 class="blog-post-date-and-cat px-4"><span class="date">20/02/2019</span> | <span class="cat">MASSAGEM TANTRICA</span></h5>
+                    <h1 class="blog-post-title mb-4 px-4">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
+                    <p class="blog-post-excerpt px-4">
+                        Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas,
+                        mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações
+                        maravilhosas, mas o que a maioria das mulheres [...]
+                    </p>
+                    <a href="javascript:;" class="blog-post-continue-reading px-4">
+                        Leia mais
+                        <span class="read-more-icon"> <img src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyLjAwOCA1MTIuMDA4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDA4IDUxMi4wMDg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzgxLjA0OCwyNDguNjMzTDE0Ni4zODEsMy4yOTljLTMuMDIxLTMuMTQ2LTcuNjQ2LTQuMTY3LTExLjY4OC0yLjUyMWMtNC4wNDIsMS42MTUtNi42ODgsNS41NDItNi42ODgsOS44OTZ2NDIuNjY3ICAgIGMwLDIuNzI5LDEuMDQyLDUuMzU0LDIuOTE3LDcuMzMzbDE4NS4wNjMsMTk1LjMzM0wxMzAuOTIzLDQ1MS4zNDFjLTEuODc1LDEuOTc5LTIuOTE3LDQuNjA0LTIuOTE3LDcuMzMzdjQyLjY2NyAgICBjMCw0LjM1NCwyLjY0Niw4LjI4MSw2LjY4OCw5Ljg5NmMxLjI5MiwwLjUyMSwyLjY0NiwwLjc3MSwzLjk3OSwwLjc3MWMyLjg1NCwwLDUuNjQ2LTEuMTQ2LDcuNzA4LTMuMjkybDIzNC42NjctMjQ1LjMzMyAgICBDMzg0Ljk4NiwyNTkuMjU4LDM4NC45ODYsMjUyLjc1OCwzODEuMDQ4LDI0OC42MzN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNBMjg4NTEiIGRhdGEtb2xkX2NvbG9yPSIjI0EyODg1Ij48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> </span>
+                    </a>
+                </div>
+                <!-- Para Mobile -->
+                <div class="d-block d-md-none blog-post-content-wrapper">
+                    <h5 class="blog-post-date-and-cat px-4"><span class="date">20/02/2019</span> | <span class="cat">MASSAGEM TANTRICA</span></h5>
+                    <h1 class="blog-post-title mb-4 px-4">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
+                    <p class="blog-post-excerpt px-4">
+                        Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas,
+                        mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações
+                        maravilhosas, mas o que a maioria das mulheres [...]
+                    </p>
+                    <a href="javascript:;" class="blog-post-continue-reading px-4">
+                        Leia mais
+                        <span class="read-more-icon"> <img src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyLjAwOCA1MTIuMDA4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDA4IDUxMi4wMDg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzgxLjA0OCwyNDguNjMzTDE0Ni4zODEsMy4yOTljLTMuMDIxLTMuMTQ2LTcuNjQ2LTQuMTY3LTExLjY4OC0yLjUyMWMtNC4wNDIsMS42MTUtNi42ODgsNS41NDItNi42ODgsOS44OTZ2NDIuNjY3ICAgIGMwLDIuNzI5LDEuMDQyLDUuMzU0LDIuOTE3LDcuMzMzbDE4NS4wNjMsMTk1LjMzM0wxMzAuOTIzLDQ1MS4zNDFjLTEuODc1LDEuOTc5LTIuOTE3LDQuNjA0LTIuOTE3LDcuMzMzdjQyLjY2NyAgICBjMCw0LjM1NCwyLjY0Niw4LjI4MSw2LjY4OCw5Ljg5NmMxLjI5MiwwLjUyMSwyLjY0NiwwLjc3MSwzLjk3OSwwLjc3MWMyLjg1NCwwLDUuNjQ2LTEuMTQ2LDcuNzA4LTMuMjkybDIzNC42NjctMjQ1LjMzMyAgICBDMzg0Ljk4NiwyNTkuMjU4LDM4NC45ODYsMjUyLjc1OCwzODEuMDQ4LDI0OC42MzN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNBMjg4NTEiIGRhdGEtb2xkX2NvbG9yPSIjI0EyODg1Ij48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-5 ml-5-">
+                <div class="blog-post-img-wrapper">
+                    <a href="#"><img class="blog-post-img" src="<?php bloginfo('template_url'); ?>/assets/img/2.png"></a>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 my-auto ml-5-">
+                <div class="blog-post-content-wrapper py-5 pr-10">
+                    <h5 class="blog-post-date-and-cat px-4"><span class="date">20/02/2019</span> | <span class="cat">MASSAGEM TANTRICA</span></h5>
+                    <h1 class="blog-post-title mb-4 px-4">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
+                    <p class="blog-post-excerpt px-4">
+                        Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas,
+                        mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações
+                        maravilhosas, mas o que a maioria das mulheres [...]
+                    </p>
+                    <a href="javascript:;" class="blog-post-continue-reading px-4">
+                        Leia mais
+                        <span class="read-more-icon"> <img src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyLjAwOCA1MTIuMDA4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDA4IDUxMi4wMDg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzgxLjA0OCwyNDguNjMzTDE0Ni4zODEsMy4yOTljLTMuMDIxLTMuMTQ2LTcuNjQ2LTQuMTY3LTExLjY4OC0yLjUyMWMtNC4wNDIsMS42MTUtNi42ODgsNS41NDItNi42ODgsOS44OTZ2NDIuNjY3ICAgIGMwLDIuNzI5LDEuMDQyLDUuMzU0LDIuOTE3LDcuMzMzbDE4NS4wNjMsMTk1LjMzM0wxMzAuOTIzLDQ1MS4zNDFjLTEuODc1LDEuOTc5LTIuOTE3LDQuNjA0LTIuOTE3LDcuMzMzdjQyLjY2NyAgICBjMCw0LjM1NCwyLjY0Niw4LjI4MSw2LjY4OCw5Ljg5NmMxLjI5MiwwLjUyMSwyLjY0NiwwLjc3MSwzLjk3OSwwLjc3MWMyLjg1NCwwLDUuNjQ2LTEuMTQ2LDcuNzA4LTMuMjkybDIzNC42NjctMjQ1LjMzMyAgICBDMzg0Ljk4NiwyNTkuMjU4LDM4NC45ODYsMjUyLjc1OCwzODEuMDQ4LDI0OC42MzN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNBMjg4NTEiIGRhdGEtb2xkX2NvbG9yPSIjI0EyODg1Ij48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row bg-gray">
+            <div class="col-12 col-md-5 ml-5-">
+                <div class="blog-post-img-wrapper">
+                    <a href="#"><img class="blog-post-img" src="<?php bloginfo('template_url'); ?>/assets/img/3.png"></a>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 my-auto ml-5-">
+                <div class="blog-post-content-wrapper py-5 pr-10">
+                    <h5 class="blog-post-date-and-cat px-4"><span class="date">20/02/2019</span> | <span class="cat">MASSAGEM TANTRICA</span></h5>
+                    <h1 class="blog-post-title mb-4 px-4">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
+                    <p class="blog-post-excerpt px-4">
+                        Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas,
+                        mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações
+                        maravilhosas, mas o que a maioria das mulheres [...]
+                    </p>
+                    <a href="javascript:;" class="blog-post-continue-reading px-4">
+                        Leia mais
+                        <span class="read-more-icon"> <img src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyLjAwOCA1MTIuMDA4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDA4IDUxMi4wMDg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzgxLjA0OCwyNDguNjMzTDE0Ni4zODEsMy4yOTljLTMuMDIxLTMuMTQ2LTcuNjQ2LTQuMTY3LTExLjY4OC0yLjUyMWMtNC4wNDIsMS42MTUtNi42ODgsNS41NDItNi42ODgsOS44OTZ2NDIuNjY3ICAgIGMwLDIuNzI5LDEuMDQyLDUuMzU0LDIuOTE3LDcuMzMzbDE4NS4wNjMsMTk1LjMzM0wxMzAuOTIzLDQ1MS4zNDFjLTEuODc1LDEuOTc5LTIuOTE3LDQuNjA0LTIuOTE3LDcuMzMzdjQyLjY2NyAgICBjMCw0LjM1NCwyLjY0Niw4LjI4MSw2LjY4OCw5Ljg5NmMxLjI5MiwwLjUyMSwyLjY0NiwwLjc3MSwzLjk3OSwwLjc3MWMyLjg1NCwwLDUuNjQ2LTEuMTQ2LDcuNzA4LTMuMjkybDIzNC42NjctMjQ1LjMzMyAgICBDMzg0Ljk4NiwyNTkuMjU4LDM4NC45ODYsMjUyLjc1OCwzODEuMDQ4LDI0OC42MzN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNBMjg4NTEiIGRhdGEtb2xkX2NvbG9yPSIjI0EyODg1Ij48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-5 my-auto ml-5-">
+                <div class="blog-post-img-wrapper">
+                    <a href="#"><img class="blog-post-img" src="<?php bloginfo('template_url'); ?>/assets/img/5.png"></a>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 my-auto ml-5-">
+                <div class="blog-post-content-wrapper py-5 pr-10">
+                    <h5 class="blog-post-date-and-cat px-4"><span class="date">20/02/2019</span> | <span class="cat">MASSAGEM TANTRICA</span></h5>
+                    <h1 class="blog-post-title mb-4 px-4">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
+                    <p class="blog-post-excerpt px-4">
+                        Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas,
+                        mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações
+                        maravilhosas, mas o que a maioria das mulheres [...]
+                    </p>
+                    <a href="javascript:;" class="blog-post-continue-reading px-4">
+                        Leia mais
+                        <span class="read-more-icon"> <img src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyLjAwOCA1MTIuMDA4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDA4IDUxMi4wMDg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzgxLjA0OCwyNDguNjMzTDE0Ni4zODEsMy4yOTljLTMuMDIxLTMuMTQ2LTcuNjQ2LTQuMTY3LTExLjY4OC0yLjUyMWMtNC4wNDIsMS42MTUtNi42ODgsNS41NDItNi42ODgsOS44OTZ2NDIuNjY3ICAgIGMwLDIuNzI5LDEuMDQyLDUuMzU0LDIuOTE3LDcuMzMzbDE4NS4wNjMsMTk1LjMzM0wxMzAuOTIzLDQ1MS4zNDFjLTEuODc1LDEuOTc5LTIuOTE3LDQuNjA0LTIuOTE3LDcuMzMzdjQyLjY2NyAgICBjMCw0LjM1NCwyLjY0Niw4LjI4MSw2LjY4OCw5Ljg5NmMxLjI5MiwwLjUyMSwyLjY0NiwwLjc3MSwzLjk3OSwwLjc3MWMyLjg1NCwwLDUuNjQ2LTEuMTQ2LDcuNzA4LTMuMjkybDIzNC42NjctMjQ1LjMzMyAgICBDMzg0Ljk4NiwyNTkuMjU4LDM4NC45ODYsMjUyLjc1OCwzODEuMDQ4LDI0OC42MzN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNBMjg4NTEiIGRhdGEtb2xkX2NvbG9yPSIjI0EyODg1Ij48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 <!-- AQUI É A PAGINAÇÃO DOS POSTS -->
 
-		<div class="container">
+		<!--<div class="container">
 			<div class="row paginacao-footer">
 				<div class="col-sm"></div>
 				<div class="col-sm">
@@ -182,29 +230,24 @@
 				
 				
 			</div>
-		</div>	
+		</div>	-->
+</section>
 
-	</section>	
-
-	<section class="sessao-optin">
-		<div class="row">
-			<div class="col-sm-7 img-post"><img class="img-optin-form" src="<?php bloginfo('template_url'); ?>/assets/img/5.png"></div>
-
-			<div class="col-sm-5 optin-form">
-				<div class="headline-optin">
-	<h3 class="headline-optin-title">Receba atualizações e conteúdos gratuitos diretamente no seu e-mail</h3>
-	<p>Eu quero receber os e-mails e informações da Aline Saloní</p>
-
-				</div>
-				<div class="form-group optin-campos-form">
-					<form>
-					<input type="email" class="form-control form-input-optin" id="exampleInputEmail1" name="email" placeholder="Digite seu e-mail">
-					<button type="submit" class="btn btn-primary">Quero receber</button>
-					</form>
-				</div>
-				
-			</div>
-
-		</div>
-	</section>
+<section class="sessao-optin">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-12 col-md-7">
+                <div class="lead-img">
+                    <img class="blog-post-img" src="<?php bloginfo('template_url'); ?>/assets/img/5.png">
+                </div>
+            </div>
+            <div class="col-12 col-md-5 optin-form text-center p-5">
+                <h1 class="lead-title mt-5">Receba atualizações e conteúdos gratuitos diretamente no seu e-mail</h1>
+                <h3 class="lead-subtitle">Eu quero receber os e-mails e informações da Aline Saloní</h3>
+                <input class="form-control text-center captura-input mt-5" name="captura-email" type="email" placeholder="Digite Seu E-mail" />
+                <button class="btn btn-gold captura-btn lead-btn w-100">Quero Receber!</button>
+            </div>
+        </div>
+    </div>
+</section>
 <?php get_footer();?>
