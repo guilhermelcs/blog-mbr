@@ -16,7 +16,8 @@
 	<?php wp_head(); ?>
 </head>
 <body>
-<section class="topo single-topo" style="background-image: url('<?php bloginfo('template_url'); ?>/assets/img/1.png');">
+<?php while ( have_posts() ) : the_post(); ?>
+<section class="topo single-topo" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>')">
 	<!-- AQUI COMEÇA O MENU -->
 	<nav class="navbar navbar-expand-lg navbar-light nav-single menu mb-5 pb-0">
 		<div class="container-fluid">
@@ -48,3 +49,4 @@
 			</div>
 		</div>
 	</nav>
+<?php endwhile;?>

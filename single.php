@@ -7,6 +7,8 @@ else {
 }
 wp_head();
 ?>
+<?php wp_reset_query(); ?>
+
 <!-- AQUI COMEÇA O FORM DE CAPTURA -->
 <div class="container single-form pt-5 pb-5">
     <div class="row">
@@ -35,15 +37,17 @@ wp_head();
     </div>
 </div>
 
+<?php while ( have_posts() ) : the_post(); ?>
 
 <!-- AQUI COMEÇA O TITULO DO POST -->
 <div class="container-fluid">
     <div class="row">
         <div class="d-none d-md-block col-12 col-md-3"></div>
         <div class="d-block d-md-block col-12 col-md-6">
-            <div class="top-post-data-single text-left text-light">
-                <h5 class="data categoria">Massagem Tantrica</h5>
-                <h1 class="titulo-post-single text-light">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
+            <div class="top-post-data-single text-left text-light text-center">
+	            <?php $category = get_the_category($post->ID);?>
+                <h5 class="data categoria"><?php echo $category[0]->cat_name?></h5>
+                <h1 class="titulo-post-single text-light"><?php echo the_title(); ?></h1>
             </div>
         </div>
         <div class="d-none d-md-block col-12 col-md-3"></div>
@@ -83,6 +87,7 @@ wp_head();
             <div class="d-none d-md-block col-md-2"></div>
         </div>
     </div>
+<?php endwhile;?>
 
     <!-- AQUI COMEÇA A SEÇÃO DE TRES TOPPOST	 -->
     <div class="container mt-5 pt-5">
@@ -133,4 +138,4 @@ wp_head();
         </div>
     </div>
 </section>
-<?php get_footer();?>
+<?php get_footer(); ?>

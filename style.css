@@ -10,6 +10,10 @@ Description: Tema para blog Wordpress
 	font-family: 'Montserrat', sans-serif;
 }
 
+a:hover {
+	text-decoration: none !important;
+}
+
 /*Index Styles*/
 
 .navbar.menu {
@@ -61,7 +65,7 @@ Description: Tema para blog Wordpress
 	color: #dabc7c;
 }
 
-.cat-post-title {
+cat-post-title {
 	font-size: 1.6rem;
 	color: #ffffff;
 }
@@ -104,6 +108,17 @@ Description: Tema para blog Wordpress
 .blog-post-title {
 	font-size: 1.8rem;
 	font-weight: 600;
+	color: #161616;
+}
+
+.blog-post-title a {
+	font-size: 1.8rem;
+	font-weight: 600;
+	color: #161616;
+}
+
+.blog-post-title a:hover {
+	color: #3b3b3b;
 }
 
 .blog-post-continue-reading {
