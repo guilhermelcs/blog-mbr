@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <!-- AQUI COMEÇA O FORM DE CAPTURA -->
-<div class="container pt-5 pb-5">
+<div class="container single-form pt-5 pb-5">
     <div class="row">
         <div class="d-none d-md-block col-12 col-md-3"></div>
         <div class="col-12 col-md-6">
@@ -27,6 +27,18 @@
     </div>
 </div>
 
+<!--Queries da página-->
+<?php
+//Query dos ultimos posts
+$last_posts = get_posts(array(
+	'posts_per_page' => 10,
+	'post_type'      => 'post',
+	'orderby'        => 'date',
+	'orer' => 'DESC',
+));
+
+//var_dump($last_posts);
+?>
 <!-- AQUI COMEÇA A SEÇÃO DE CATEGORIAS -->
 <div class="container">
     <div class="row">
@@ -58,6 +70,7 @@
 </div>
 
 <!-- AQUI COMEÇA A SEÇÃO DE TRES TOPPOST	 -->
+
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-4">
@@ -91,15 +104,21 @@
 <!-- AQUI COMEÇA A LISTAGEM DOS POST -->
 <section>
     <div class="container-fluid">
+        <?php foreach ($last_posts as $post) {?>
         <div class="row bg-gray">
             <div class="col-12 col-md-5 ml-5-">
                 <div class="blog-post-img-wrapper">
-                    <a href="#"><img class="blog-post-img" src="<?php bloginfo('template_url'); ?>/assets/img/1.png"></a>
-                </div>
+                    <?php if(has_post_thumbnail($post->ID)) {?>
+                        <a href="#"><img class="blog-post-img" src="<?php echo get_the_post_thumbnail($post->ID) ?></a>
+                    <?} else {?>
+                        <a href="#"><img class="blog-post-img" src="<?php bloginfo('template_url'); ?>/assets/img/3.png"></a>
+                    <?php }?>
+        </div>
             </div>
             <div class="col-12 col-md-7 my-auto ml-5-">
                 <div class="d-none d-md-block blog-post-content-wrapper py-5 pr-10">
-                    <h5 class="blog-post-date-and-cat px-4"><span class="date">20/02/2019</span> | <span class="cat">MASSAGEM TANTRICA</span></h5>
+	                <?php $category = get_the_category($post->ID);?>
+                    <h5 class="blog-post-date-and-cat px-4"><span class="date"><?php echo get_the_date('j \d\e F \d\e Y')?></span> | <a href="<?php echo get_category_link( $categories[0]->term_id );?>"><span class="cat"><?php echo $category[0]->cat_name?></span></a></h5>
                     <h1 class="blog-post-title mb-4 px-4">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
                     <p class="blog-post-excerpt px-4">
                         Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas,
@@ -129,75 +148,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-5 ml-5-">
-                <div class="blog-post-img-wrapper">
-                    <a href="#"><img class="blog-post-img" src="<?php bloginfo('template_url'); ?>/assets/img/2.png"></a>
-                </div>
-            </div>
-            <div class="col-12 col-md-7 my-auto ml-5-">
-                <div class="blog-post-content-wrapper py-5 pr-10">
-                    <h5 class="blog-post-date-and-cat px-4"><span class="date">20/02/2019</span> | <span class="cat">MASSAGEM TANTRICA</span></h5>
-                    <h1 class="blog-post-title mb-4 px-4">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
-                    <p class="blog-post-excerpt px-4">
-                        Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas,
-                        mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações
-                        maravilhosas, mas o que a maioria das mulheres [...]
-                    </p>
-                    <a href="javascript:;" class="blog-post-continue-reading px-4">
-                        Leia mais
-                        <span class="read-more-icon"> <img src="data:image/svg+xml;base64,
-PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyLjAwOCA1MTIuMDA4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDA4IDUxMi4wMDg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzgxLjA0OCwyNDguNjMzTDE0Ni4zODEsMy4yOTljLTMuMDIxLTMuMTQ2LTcuNjQ2LTQuMTY3LTExLjY4OC0yLjUyMWMtNC4wNDIsMS42MTUtNi42ODgsNS41NDItNi42ODgsOS44OTZ2NDIuNjY3ICAgIGMwLDIuNzI5LDEuMDQyLDUuMzU0LDIuOTE3LDcuMzMzbDE4NS4wNjMsMTk1LjMzM0wxMzAuOTIzLDQ1MS4zNDFjLTEuODc1LDEuOTc5LTIuOTE3LDQuNjA0LTIuOTE3LDcuMzMzdjQyLjY2NyAgICBjMCw0LjM1NCwyLjY0Niw4LjI4MSw2LjY4OCw5Ljg5NmMxLjI5MiwwLjUyMSwyLjY0NiwwLjc3MSwzLjk3OSwwLjc3MWMyLjg1NCwwLDUuNjQ2LTEuMTQ2LDcuNzA4LTMuMjkybDIzNC42NjctMjQ1LjMzMyAgICBDMzg0Ljk4NiwyNTkuMjU4LDM4NC45ODYsMjUyLjc1OCwzODEuMDQ4LDI0OC42MzN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNBMjg4NTEiIGRhdGEtb2xkX2NvbG9yPSIjI0EyODg1Ij48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row bg-gray">
-            <div class="col-12 col-md-5 ml-5-">
-                <div class="blog-post-img-wrapper">
-                    <a href="#"><img class="blog-post-img" src="<?php bloginfo('template_url'); ?>/assets/img/3.png"></a>
-                </div>
-            </div>
-            <div class="col-12 col-md-7 my-auto ml-5-">
-                <div class="blog-post-content-wrapper py-5 pr-10">
-                    <h5 class="blog-post-date-and-cat px-4"><span class="date">20/02/2019</span> | <span class="cat">MASSAGEM TANTRICA</span></h5>
-                    <h1 class="blog-post-title mb-4 px-4">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
-                    <p class="blog-post-excerpt px-4">
-                        Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas,
-                        mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações
-                        maravilhosas, mas o que a maioria das mulheres [...]
-                    </p>
-                    <a href="javascript:;" class="blog-post-continue-reading px-4">
-                        Leia mais
-                        <span class="read-more-icon"> <img src="data:image/svg+xml;base64,
-PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyLjAwOCA1MTIuMDA4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDA4IDUxMi4wMDg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzgxLjA0OCwyNDguNjMzTDE0Ni4zODEsMy4yOTljLTMuMDIxLTMuMTQ2LTcuNjQ2LTQuMTY3LTExLjY4OC0yLjUyMWMtNC4wNDIsMS42MTUtNi42ODgsNS41NDItNi42ODgsOS44OTZ2NDIuNjY3ICAgIGMwLDIuNzI5LDEuMDQyLDUuMzU0LDIuOTE3LDcuMzMzbDE4NS4wNjMsMTk1LjMzM0wxMzAuOTIzLDQ1MS4zNDFjLTEuODc1LDEuOTc5LTIuOTE3LDQuNjA0LTIuOTE3LDcuMzMzdjQyLjY2NyAgICBjMCw0LjM1NCwyLjY0Niw4LjI4MSw2LjY4OCw5Ljg5NmMxLjI5MiwwLjUyMSwyLjY0NiwwLjc3MSwzLjk3OSwwLjc3MWMyLjg1NCwwLDUuNjQ2LTEuMTQ2LDcuNzA4LTMuMjkybDIzNC42NjctMjQ1LjMzMyAgICBDMzg0Ljk4NiwyNTkuMjU4LDM4NC45ODYsMjUyLjc1OCwzODEuMDQ4LDI0OC42MzN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNBMjg4NTEiIGRhdGEtb2xkX2NvbG9yPSIjI0EyODg1Ij48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-5 my-auto ml-5-">
-                <div class="blog-post-img-wrapper">
-                    <a href="#"><img class="blog-post-img" src="<?php bloginfo('template_url'); ?>/assets/img/5.png"></a>
-                </div>
-            </div>
-            <div class="col-12 col-md-7 my-auto ml-5-">
-                <div class="blog-post-content-wrapper py-5 pr-10">
-                    <h5 class="blog-post-date-and-cat px-4"><span class="date">20/02/2019</span> | <span class="cat">MASSAGEM TANTRICA</span></h5>
-                    <h1 class="blog-post-title mb-4 px-4">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
-                    <p class="blog-post-excerpt px-4">
-                        Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas,
-                        mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações
-                        maravilhosas, mas o que a maioria das mulheres [...]
-                    </p>
-                    <a href="javascript:;" class="blog-post-continue-reading px-4">
-                        Leia mais
-                        <span class="read-more-icon"> <img src="data:image/svg+xml;base64,
-PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyLjAwOCA1MTIuMDA4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDA4IDUxMi4wMDg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzgxLjA0OCwyNDguNjMzTDE0Ni4zODEsMy4yOTljLTMuMDIxLTMuMTQ2LTcuNjQ2LTQuMTY3LTExLjY4OC0yLjUyMWMtNC4wNDIsMS42MTUtNi42ODgsNS41NDItNi42ODgsOS44OTZ2NDIuNjY3ICAgIGMwLDIuNzI5LDEuMDQyLDUuMzU0LDIuOTE3LDcuMzMzbDE4NS4wNjMsMTk1LjMzM0wxMzAuOTIzLDQ1MS4zNDFjLTEuODc1LDEuOTc5LTIuOTE3LDQuNjA0LTIuOTE3LDcuMzMzdjQyLjY2NyAgICBjMCw0LjM1NCwyLjY0Niw4LjI4MSw2LjY4OCw5Ljg5NmMxLjI5MiwwLjUyMSwyLjY0NiwwLjc3MSwzLjk3OSwwLjc3MWMyLjg1NCwwLDUuNjQ2LTEuMTQ2LDcuNzA4LTMuMjkybDIzNC42NjctMjQ1LjMzMyAgICBDMzg0Ljk4NiwyNTkuMjU4LDM4NC45ODYsMjUyLjc1OCwzODEuMDQ4LDI0OC42MzN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNBMjg4NTEiIGRhdGEtb2xkX2NvbG9yPSIjI0EyODg1Ij48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> </span>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <?php }?>
     </div>
 <!-- AQUI É A PAGINAÇÃO DOS POSTS -->
 

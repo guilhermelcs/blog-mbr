@@ -4,9 +4,13 @@ Author: Guilherme Lucas / Vitor Alburqueque
 Description: Tema para blog Wordpress
 */
 
+/*Global Styles*/
+
 * {
 	font-family: 'Montserrat', sans-serif;
 }
+
+/*Index Styles*/
 
 .navbar.menu {
 	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -85,6 +89,16 @@ Description: Tema para blog Wordpress
 .blog-post-date-and-cat {
 	font-size: 0.8rem;
 	font-weight: 600;
+}
+
+.blog-post-date-and-cat a span{
+	font-size: 0.8rem;
+	font-weight: 600;
+	color: #212529;
+}
+
+.blog-post-date-and-cat a:hover{
+	text-decoration: none !important;
 }
 
 .blog-post-title {
@@ -473,4 +487,75 @@ margin-top: 0px;
 
 .div-categorias {
 	display: none;
+}
+
+/*Single Styles*/
+
+.single-topo {
+	position: relative;
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 100;
+}
+
+.single-topo:before {
+	content: "";
+	display: block;
+	position: absolute; /* could also be absolute */
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -110;
+	background-color: rgba(97, 97, 97, 0.72);
+}
+
+.nav-single{
+	box-shadow: none !important;
+	padding-top: 2.5rem !important;
+}
+
+.avatar-wrapper {
+	overflow: hidden;
+	border-radius: 5rem;
+	width: 100px;
+	height: 100px;
+}
+
+.avatar-img {
+	width: 100%;
+	height: 100%;
+}
+
+.author-name {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+h3.post-date {
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+.post-text {
+	font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+	font-size: 1.3rem;
+	text-align: justify;
+}
+
+.cat-post-date.single {
+	color: #b79c49 !important;
+}
+
+.cat-post-excerpt.single {
+	color: #4d421f !important;
+}
+
+.cat-post-title.single {
+	color: #dabc7c !important;
+}
+
+.cat-post-separador.single {
+	border-top: 2px solid rgba(0, 0, 0, 0.49);
 }

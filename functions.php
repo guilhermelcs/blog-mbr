@@ -6,6 +6,8 @@
  * Time: 14:24
  */
 
+add_theme_support( 'post-thumbnails' );
+
 //Carregando Scripts
 add_action('wp_enqueue_scripts', 'wpdocs_scripts_method');
 /*
