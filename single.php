@@ -46,7 +46,8 @@ wp_head();
         <div class="d-block d-md-block col-12 col-md-6">
             <div class="top-post-data-single text-left text-light text-center">
 	            <?php $category = get_the_category($post->ID);?>
-                <h5 class="data categoria"><?php echo $category[0]->cat_name?></h5>
+                <h5 class="data categoria">
+                    <a href="<?php get_category_link( $categories[0]->term_id );?>"><?php echo $category[0]->cat_name?></h5></a>
                 <h1 class="titulo-post-single text-light"><?php echo the_title(); ?></h1>
             </div>
         </div>
@@ -74,13 +75,13 @@ wp_head();
                     <div class="col-md-4 my-auto">
                         <div class="post-author post-date">
                             <h2 class="author-name">Aline Saloní</h2>
-                            <h3 class="post-date">23 de Janeiro de 2019</h3>
+                            <h3 class="post-date"><?php echo get_the_date('j \d\e F \d\e Y').' '?></h3>
                         </div>
                     </div>
                 </div>
                 <div class="row mt-4">
                     <div class="col-12 col-md-12">
-                        <p class="post-text">Como fazer a massagem yoni em casal A massagem yoni deve ser feita em um espaço confortável e seguro e a área deve estar livre de distrações e interrupções. Toque músicas suaves e relaxantes, se desejar. Antes de começar, o casal deve olhar nos olhos um do outro enquanto se envolvem em uma respiração profunda, relaxada e sincronizada. Este é um tipo de “preliminar tântrica” em que o casal forma um vínculo emocional e espiritual. Tanto o homem quanto a mulher devem se lembrar de continuar respirando profundamente, devagar e com relaxamento durante todo o processo. Primeiro passo Quando ambos estão prontos para começara massagem, a mulher está deitada de costas com um travesseiro sob a cabeça e outro sob os quadris para elevar a pélvis. Ela dobra os joelhos e abre as pernas para expor seu yoni. O homem deve se sentar confortavelmente entre as pernas com as pernas cruzadas. Ele deve começar massageando outras partes do corpo para encorajá-la a relaxar. Suavemente, mas com firmeza, massagear as pernas, coxas, barriga, seios e braços antes de se aventurar na direção do yoni. Em seguida, massagear a área do osso púbico e, em seguida, deslocar-se para a área interna da coxa. Esse movimento deve ser feito pelo menos nove vezes. Então, com a mão direita (a mão direita é usada para equilibrar a polaridade do Tantra), aplicar um óleo ou lubrificante derramando apenas o suficiente para que escorra pelos lábios externos e cubra o exterior do yoni. Massageando com suavidade Depois, esfregar suavemente o óleo nos lábios externos do yoni pelo menos nove vezes. Com o polegar e o indicador, deve apertar suavemente cada lábio da yoni, deslizando os dedos para cima e para baixo em toda a extensão de cada lábio. Em seguida, repita este processo cuidadosamente com cada lábio interno da vagina. O próximo passo é acariciar o clitóris em movimentos circulares, no sentido horário e anti-horário. Em seguida, apertar o clitóris entre o polegar e o dedo indicador. Em seguida, devagar e com muito cuidado, inserir o dedo médio no yoni. Emoções intensas Durante a massagem, a mulher pode ter emoções poderosas e chorar. Se ela tiver um orgasmo, a massagem deve continuar. Mais orgasmos podem ocorrer, cada um ganhando intensidade. No Tantra isso é chamado de “andar na onda”. Muitas mulheres podem aprender a ser multi-orgásmicas com a massagem yoni e um parceiro paciente. O homem deve continuar massageando até que ela diga para parar. Muito devagar, gentilmente e com respeito, ele deve retirar as mãos. A massagem yoni cria um espaço para a mulher relaxar e entrar em um estado de alta excitação e sentir muito prazer. Depois da massagem Uma massagem yoni pode durar alguns minutos ou algumas horas. No final, ambos os parceiros podem sentir uma série de sensações emocionais e físicas e precisam de tempo para se recuperar da experiência. Ele deve terminar a massagem lenta e suavemente, permitindo que sua parceira relaxe e aproveite os efeitos posteriores da massagem. Pode também cobri-la com cobertores para se aquecer, e o aconchego é altamente encorajado.</p>
+                        <p class="post-text"><?php echo get_the_content()?></p>
                     </div>
                 </div>
             </div>

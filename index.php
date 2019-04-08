@@ -66,7 +66,7 @@ $last_posts = get_posts(array(
             </div>
         <div class="d-none d-md-block col-12 col-md-1"></div>
     </div>
-        <hr class="cat-top-post-separador mt-0 mb-5" align="center" width="90%" size="10" color="#7E425A"
+        <hr class="cat-top-post-separador mt-0 mb-5" width="90%" size="10" color="#7E425A">
 </div>
 
 <!-- AQUI COMEÇA A SEÇÃO DE TRES TOPPOST	 -->
@@ -109,9 +109,9 @@ $last_posts = get_posts(array(
             <div class="col-12 col-md-5 ml-5-">
                 <div class="blog-post-img-wrapper">
                     <?php if(has_post_thumbnail($post->ID)) {?>
-                        <a href="<?php echo the_permalink($post->ID)?>"><img class="blog-post-img" src="<?php echo get_the_post_thumbnail($post->ID) ?></a>
-                    <?} else {?>
-                        <a href="<?php echo the_permalink($post->ID)?>"><img class="blog-post-img" src="<?php bloginfo('template_url'); ?>/assets/img/3.png"></a>
+                        <a href="<?php echo the_permalink($post->ID)?>"><img class="blog-post-img" src="<?php echo get_the_post_thumbnail($post->ID) ?>"></a>
+                    <?php } else {?>
+                        <a href="<?php echo the_permalink($post->ID); ?>"><img class="blog-post-img" src="<?php bloginfo('template_url'); ?>/assets/img/3.png"></a>
                     <?php }?>
                 </div>
             </div>
@@ -119,9 +119,9 @@ $last_posts = get_posts(array(
                 <div class="d-none d-md-block blog-post-content-wrapper py-5 pr-10">
 	                <?php $category = get_the_category($post->ID);?>
                     <h5 class="blog-post-date-and-cat px-4">
-                        <span class="date"><?php echo get_the_date('j \d\e F \d\e Y')?></span>
-                        <a href="<?php echo get_category_link( $categories[0]->term_id );?>">
-                            <span class="cat"><?php echo $category[0]->cat_name?></span>
+                        <span class="date"><?php echo get_the_date('j \d\e F \d\e Y').' '?>|</span>
+                        <a href="<?php get_category_link( $categories[0]->term_id );?>">
+                            <span class="cat"><?php echo ' '. $category[0]->cat_name?></span>
                         </a>
                     </h5>
                     <h1 class="blog-post-title mb-3 px-4"><a href="<?php echo the_permalink($post->ID)?>"><?php echo get_the_title($post->ID)?></a></h1>

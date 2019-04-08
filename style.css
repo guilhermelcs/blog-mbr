@@ -65,7 +65,7 @@ a:hover {
 	color: #dabc7c;
 }
 
-cat-post-title {
+.cat-post-title {
 	font-size: 1.6rem;
 	color: #ffffff;
 }
@@ -190,11 +190,15 @@ span.read-more-icon img{
 .data.top-potdate {
 	color: #dabc7c;
 	font-size: 0.7rem;
-
 }
 
 .data.categoria{
 	margin-left: 1rem;
+}
+
+.data.categoria a{
+	margin-left: 1rem;
+	color: #ffffff;
 }
 
 .img-list-post-blog {
