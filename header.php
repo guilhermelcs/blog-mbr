@@ -18,33 +18,42 @@
 <body>
     <section class="topo">
     <!-- AQUI COMEÇA O MENU -->
-    <nav class="navbar navbar-expand-lg navbar-light menu mb-5 pb-0">
-        <div class="container-fluid">
-            <a class="navbar-brand mr-5 ml-5 pr-3" href="#"><img class="logo-header" src="<?php bloginfo('template_url'); ?>/assets/img/example_logo.svg.png"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav justify-content-end mr-5">
-                    <li class="nav-item mr-3">
-                        <a class="nav-link menu" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item mr-3">
-                        <a class="nav-link menu" href="#">Vídeos</a>
-                    </li>
-                    <li class="nav-item mr-3">
-                        <a class="nav-link menu" href="#">Aline Saloní</a>
-                    </li>
-                    <li class="nav-item mr-3">
-                        <a class="nav-link menu" href="#">Cursos</a>
-                    </li>
-                    <li class="nav-item mr-3">
-                        <a class="nav-link menu" href="#">Contato</a>
-                    </li>
-                </ul>
-                <a id="search-icon-link" class="mr-5 ml-4" href="javascript:;">
-                    <img id="search-icon" width="25" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4My4wODMgNDgzLjA4MyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDgzLjA4MyA0ODMuMDgzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTMzMi43NCwzMTUuMzVjMzAuODgzLTMzLjQzMyw1MC4xNS03OC4yLDUwLjE1LTEyNy41QzM4Mi44OSw4NC40MzMsMjk4Ljc0LDAsMTk1LjA0LDBTNy4xOSw4NC40MzMsNy4xOSwxODcuODUgICAgUzkxLjM0LDM3NS43LDE5NS4wNCwzNzUuN2M0Mi4yMTcsMCw4MS4wMzMtMTMuODgzLDExMi40ODMtMzcuNGwxMzkuNjgzLDEzOS42ODNjMy40LDMuNCw3LjY1LDUuMSwxMS45LDUuMXM4Ljc4My0xLjcsMTEuOS01LjEgICAgYzYuNTE3LTYuNTE3LDYuNTE3LTE3LjI4MywwLTI0LjA4M0wzMzIuNzQsMzE1LjM1eiBNNDEuMTksMTg3Ljg1QzQxLjE5LDEwMy4xMzMsMTEwLjA0LDM0LDE5NS4wNCwzNCAgICBjODQuNzE3LDAsMTUzLjg1LDY4Ljg1LDE1My44NSwxNTMuODVTMjgwLjA0LDM0MS43LDE5NS4wNCwzNDEuN1M0MS4xOSwyNzIuNTY3LDQxLjE5LDE4Ny44NXoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K">
+    <div class="navbar-menu-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light menu mb-0 pb-0">
+            <div class="container-fluid">
+                <a class="navbar-brand mr-5 ml-5 pr-3" href="<?php echo get_site_url(); ?>">
+                    <img class="logo-header" src="<?php bloginfo('template_url'); ?>/assets/img/example_logo.svg.png">
                 </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav justify-content-end mr-5">
+                        <li class="nav-item mr-3">
+                            <a class="nav-link menu" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link menu" href="#">Vídeos</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link menu" href="#">Aline Saloní</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link menu" href="#">Cursos</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link menu" href="#">Contato</a>
+                        </li>
+                    </ul>
+                    <a id="search-icon-link" class="mr-5 ml-4" href="javascript:;">
+<img id="search-icon" width="25" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDUxIDQ1MSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDUxIDQ1MTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiBjbGFzcz0iIj48Zz48Zz4KCTxwYXRoIGQ9Ik00NDcuMDUsNDI4bC0xMDkuNi0xMDkuNmMyOS40LTMzLjgsNDcuMi03Ny45LDQ3LjItMTI2LjFDMzg0LjY1LDg2LjIsMjk4LjM1LDAsMTkyLjM1LDBDODYuMjUsMCwwLjA1LDg2LjMsMC4wNSwxOTIuMyAgIHM4Ni4zLDE5Mi4zLDE5Mi4zLDE5Mi4zYzQ4LjIsMCw5Mi4zLTE3LjgsMTI2LjEtNDcuMkw0MjguMDUsNDQ3YzIuNiwyLjYsNi4xLDQsOS41LDRzNi45LTEuMyw5LjUtNCAgIEM0NTIuMjUsNDQxLjgsNDUyLjI1LDQzMy4yLDQ0Ny4wNSw0Mjh6IE0yNi45NSwxOTIuM2MwLTkxLjIsNzQuMi0xNjUuMywxNjUuMy0xNjUuM2M5MS4yLDAsMTY1LjMsNzQuMiwxNjUuMywxNjUuMyAgIHMtNzQuMSwxNjUuNC0xNjUuMywxNjUuNEMxMDEuMTUsMzU3LjcsMjYuOTUsMjgzLjUsMjYuOTUsMTkyLjN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGMkYyRjIiIGRhdGEtb2xkX2NvbG9yPSIjRjNGM0YzIj48L3BhdGg+CjwvZz48L2c+IDwvc3ZnPg==" />                    </a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+        <section id="searchbar-section" class="p-0 hide-element">
+                <div id="searchbar-wrapper">
+                    <?php get_search_form(); ?>
+                </div>
+        </section>
+    </div>

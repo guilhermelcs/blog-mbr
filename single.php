@@ -11,7 +11,7 @@ wp_head();
 
 <!-- AQUI COMEÇA O FORM DE CAPTURA -->
 <div class="container single-form pt-5 pb-5">
-    <div class="row">
+    <div class="row mt-5">
         <div class="d-none d-md-block col-12 col-md-3"></div>
         <div class="col-12 col-md-6">
             <h4 class="captura-title-top text-center font-weight-light pb-0">Receba atualizações, artigos, dicas e vídeos</h4>

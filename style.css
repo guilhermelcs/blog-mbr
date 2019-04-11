@@ -4,6 +4,17 @@ Author: Guilherme Lucas / Vitor Alburqueque
 Description: Tema para blog Wordpress
 */
 
+/* Animations */
+@-webkit-keyframes descer {
+	from { margin-top: -100px; }
+	to { margin-top: 0; }
+}
+
+@keyframes descer {
+	from { margin-top: -100px; }
+	to { margin-top: 0px; }
+}
+
 /*Global Styles*/
 
 * {
@@ -16,8 +27,27 @@ a:hover {
 
 /*Index Styles*/
 
+.navbar-menu-wrapper {
+	position: fixed;
+	width: 100%;
+	z-index: 1080;
+}
+
 .navbar.menu {
+	background-color: #6b2642;
 	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+	text-align: center;
+	font-size: 1.2rem !important;
+	border-radius: 0 !important;
+	padding: 2.5rem !important;
+	/* Search input animation */
+	-webkit-animation-name: descer; /* Safari 4.0 - 8.0 */
+	-webkit-animation-duration: 0.2s; /* Safari 4.0 - 8.0 */
+	animation-name: descer;
+	animation-duration: 0.2s;
 }
 
 .nav-link.menu {
@@ -28,6 +58,10 @@ a:hover {
 
 .nav-link.menu:hover {
 	color: #dfda58 !important;
+}
+
+.hide-element {
+	display: none;
 }
 
 .captura-input {
@@ -83,7 +117,15 @@ a:hover {
 .blog-post-img-wrapper {
 	overflow: hidden;
 	width: 100%;
-	height: 100%;
+	height: 345px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.blog-post-img-wrapper:hover {
+	box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.15);
+	transition: .2s;
 }
 
 .blog-post-img {
@@ -153,11 +195,19 @@ span.read-more-icon img{
 }
 
 .ml-5- {
-	margin-left: -15px;
+	margin-left: -15px !important;
 }
 
 .mr-5- {
 	margin-right: -15px !important;
+}
+
+.ml-5-rem {
+	margin-left: -5rem !important;
+}
+
+.search-query-title {
+	font-size: 1.5rem;
 }
 
 .lead-title {
@@ -577,4 +627,8 @@ h3.post-date {
 
 .cat-post-separador.single {
 	border-top: 2px solid rgba(0, 0, 0, 0.49);
+}
+
+.search-not-found-face {
+	width: 13rem;
 }

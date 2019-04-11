@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <!-- AQUI COMEÇA O FORM DE CAPTURA -->
 <div class="container single-form pt-5 pb-5">
-    <div class="row">
+    <div class="row mt-5">
         <div class="d-none d-md-block col-12 col-md-3"></div>
         <div class="col-12 col-md-6">
             <h4 class="captura-title-top text-center font-weight-light pb-0">Receba atualizações, artigos, dicas e vídeos</h4>
@@ -107,13 +107,10 @@ $last_posts = get_posts(array(
         <?php foreach ($last_posts as $post) {?>
         <div class="row bg-gray">
             <div class="col-12 col-md-5 ml-5-">
-                <div class="blog-post-img-wrapper">
-                    <?php if(has_post_thumbnail($post->ID)) {?>
-                        <a href="<?php echo the_permalink($post->ID)?>"><img class="blog-post-img" src="<?php echo get_the_post_thumbnail($post->ID) ?>"></a>
-                    <?php } else {?>
-                        <a href="<?php echo the_permalink($post->ID); ?>"><img class="blog-post-img" src="<?php bloginfo('template_url'); ?>/assets/img/3.png"></a>
-                    <?php }?>
-                </div>
+                <a href="<?php echo the_permalink($post->ID)?>">
+                    <div class="blog-post-img-wrapper" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID)?>')">
+                    </div>
+                </a>
             </div>
             <div class="col-12 col-md-7 my-auto ml-5-">
                 <div class="d-none d-md-block blog-post-content-wrapper py-5 pr-10">
