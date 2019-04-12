@@ -43,7 +43,7 @@ function numeric_pagination() {
 		$links[] = $paged;
 
 	/** Add the pages around the current page to the array */
-	if ( $paged >= 3 ) {
+	if ( $paged >= 10 ) {
 		$links[] = $paged - 1;
 		$links[] = $paged - 2;
 	}

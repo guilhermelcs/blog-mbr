@@ -11,7 +11,7 @@ wp_head();
 
 <!-- AQUI COMEÇA O FORM DE CAPTURA -->
 <div class="container single-form pt-5 pb-5">
-    <div class="row mt-5">
+    <div class="row pt-5 mt-5">
         <div class="d-none d-md-block col-12 col-md-3"></div>
         <div class="col-12 col-md-6">
             <h4 class="captura-title-top text-center font-weight-light pb-0">Receba atualizações, artigos, dicas e vídeos</h4>
@@ -68,18 +68,18 @@ wp_head();
                     <div class="col-md-2">
                         <div class="post-author">
                             <div class="avatar-wrapper">
-                                <img class="avatar-img" src="<?php bloginfo('template_url'); ?>/assets/img/avatar.jpg" alt="autor do post">
+                                <img class="avatar-img" src="<?php echo get_field('author_thumbnail', $post->ID)?>" alt="autor do post">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 my-auto">
                         <div class="post-author post-date">
-                            <h2 class="author-name">Aline Saloní</h2>
+                            <h2 class="author-name"><?php echo get_field('author_name', $post->ID);?></h2>
                             <h3 class="post-date"><?php echo get_the_date('j \d\e F \d\e Y').' '?></h3>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4">
+                <div class="row mt-2">
                     <div class="col-12 col-md-12">
                         <p class="post-text"><?php echo get_the_content()?></p>
                     </div>
