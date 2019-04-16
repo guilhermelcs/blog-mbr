@@ -112,6 +112,7 @@ a:hover {
 .cat-post-excerpt {
 	color: #ffffff;
 	font-size: 0.9rem;
+	text-align: justify;
 }
 
 .blog-post-img-wrapper {
@@ -619,10 +620,11 @@ h3.post-date {
 
 .cat-post-excerpt.single {
 	color: #4d421f !important;
+	text-align: justify;
 }
 
 .cat-post-title.single {
-	color: #dabc7c !important;
+	color: #b79c49 !important;
 }
 
 .cat-post-separador.single {

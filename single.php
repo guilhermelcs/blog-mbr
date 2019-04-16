@@ -6,6 +6,7 @@ else {
 	get_header();
 }
 wp_head();
+
 ?>
 <?php wp_reset_query(); ?>
 
@@ -37,7 +38,19 @@ wp_head();
     </div>
 </div>
 
-<?php while ( have_posts() ) : the_post(); ?>
+<?php while ( have_posts() ) : the_post(); 
+
+//Query para pegar os posts da categoria selecionada
+$selected_category = get_category( get_field( 'categories_first_posts') );
+
+$categorie_posts = get_posts( array(
+    'posts_per_page' => 3,
+    'orderby'      => 'name',
+    'order'        => 'ASC',
+    'cat'          => $selected_category->term_id,
+    'category_name'=> $selected_category->name
+));
+?>
 
 <!-- AQUI COMEÇA O TITULO DO POST -->
 <div class="container-fluid">
@@ -47,7 +60,7 @@ wp_head();
             <div class="top-post-data-single text-left text-light text-center">
 	            <?php $category = get_the_category($post->ID);?>
                 <h5 class="data categoria">
-                    <a href="<?php get_category_link( $categories[0]->term_id );?>"><?php echo $category[0]->cat_name?></h5></a>
+                    <a href="<?php echo get_category_link( $category[0]->term_id );?>"><?php echo $category[0]->cat_name?></h5></a>
                 <h1 class="titulo-post-single text-light"><?php echo the_title(); ?></h1>
             </div>
         </div>
@@ -88,38 +101,28 @@ wp_head();
             <div class="d-none d-md-block col-md-2"></div>
         </div>
     </div>
-<?php endwhile;?>
 
     <!-- AQUI COMEÇA A SEÇÃO DE TRES TOPPOST	 -->
     <div class="container mt-5 pt-5">
         <div class="row">
-            <div class="col-12 col-md-4">
-                <div class="cat-post-wrapper p-1">
-                    <h5 class="cat-post-date single">20 de fevereiro de 2019</h5>
-                    <h1 class="cat-post-title single">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
-                    <hr class="cat-post-separador single">
-                    <p class="cat-post-excerpt single">Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere [...]</p>
+            <?php foreach($categorie_posts as $post) {?>
+                <div class="col-12 col-md-4">
+                    <div class="cat-post-wrapper p-1">
+                        <h5 class="cat-post-date single"><?php echo get_the_date('j \d\e F \d\e Y')?></h5>
+                        <a href="<?php echo the_permalink($post->ID)?>">
+                            <h1 class="cat-post-title single"><?php echo get_the_title($post->ID)?></h1>
+                        </a>
+                        <hr class="cat-post-separador single">
+                        <a href="<?php echo the_permalink($post->ID)?>">
+                            <p class="cat-post-excerpt single"><?php echo get_the_excerpt($post->ID); ?></p>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="cat-post-wrapper p-1">
-                    <h5 class="cat-post-date single">20 de fevereiro de 2019</h5>
-                    <h1 class="cat-post-title single">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
-                    <hr class="cat-post-separador single">
-                    <p class="cat-post-excerpt single">Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere [...]</p>
-                </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="cat-post-wrapper p-1">
-                    <h5 class="cat-post-date single">20 de fevereiro de 2019</h5>
-                    <h1 class="cat-post-title single">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
-                    <hr class="cat-post-separador single">
-                    <p class="cat-post-excerpt single">Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere [...]</p>
-                </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
 </section>
+<?php endwhile;?>
 
 <!-- AQUI COMEÇA O OPTINDOWN -->
 <section class="sessao-optin">

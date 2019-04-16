@@ -43,10 +43,23 @@ $categories = get_categories( array(
     'order'   => 'ASC'
 ));
 
-//var_dump($last_posts);
+//Query para pegar os posts da categoria selecionada
+$selected_category = get_category( get_field( 'categories_first_posts_home', 45 ) );
+// var_dump($selected_category->term_id);exit();
+$categorie_posts = get_posts( array(
+    'posts_per_page' => 3,
+    'orderby'      => 'name',
+    'order'        => 'ASC',
+    'cat'          => $selected_category->term_id,
+    'category_name'=> $selected_category->name
+));
+
+// var_dump($categorie_posts);exit();
 ?>
+<?php wp_reset_query(); ?>
+
 <!-- AQUI COMEÇA A SEÇÃO DE CATEGORIAS -->
-<div class="container">
+<div class="d-none d-md-block container">
     <div class="row">
         <div class="d-none d-md-block col-12 col-md-1"></div>
             <div class="d-none d-md-block col-12 col-md-10">
@@ -67,39 +80,50 @@ $categories = get_categories( array(
         <hr class="cat-top-post-separador mt-0 mb-5" width="90%" size="10" color="#7E425A">
 </div>
 
-<!-- AQUI COMEÇA A SEÇÃO DE TRES TOPPOST	 -->
+<!-- Para Mobile -->
+<div class="d-block d-md-none container">
+    <div class="row">
+        <div class="d-block d-md-none col-12 col-md-1"></div>
+            <div class="d-block d-md-none col-12 col-md-10">
+                <nav class="navbar navbar-expand-lg navbar-light categorias-toppost ">
+                    <ul class="navbar-nav m-auto">
+                        <?php foreach($categories as $category) {?>
+                            <li class="nav-item mr-3">
+                                <a class="nav-link nav-link-cat-top-post" href="<?php echo get_category_link( $category->term_id )?>">
+                                    <span class="nav-item-span"><?php echo $category->name ?></span>
+                                </a>
+                            </li>
+                        <?php }?>
+                    </ul>
+                </nav>
+            </div>
+        <div class="d-none d-md-block col-12 col-md-1"></div>
+    </div>
+        <hr class="cat-top-post-separador mt-0 mb-5" width="90%" size="10" color="#7E425A">
+</div>
 
+<?php wp_reset_query(); ?>
+
+<!-- AQUI COMEÇA A SEÇÃO DE TRES TOPPOST	 -->
 <div class="container">
     <div class="row">
-        <?php $category = get_the_category(get_field('categories_first_posts')); var_dump($category)?>
-        <div class="col-12 col-md-4">
-            <div class="cat-post-wrapper p-1">
-                <h5 class="cat-post-date">20 de fevereiro de 2019</h5>
-                <h1 class="cat-post-title">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
-                <hr class="cat-post-separador">
-                <p class="cat-post-excerpt">Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere [...]</p>
+        <?php foreach($categorie_posts as $post) {?>
+            <div class="col-12 col-md-4">
+                <div class="cat-post-wrapper p-1">
+                    <h5 class="cat-post-date"><?php echo get_the_date('j \d\e F \d\e Y')?></h5>
+                    <a href="<?php echo the_permalink($post->ID)?>">
+                        <h1 class="cat-post-title"><?php echo get_the_title($post->ID)?></h1>
+                    </a>
+                    <hr class="cat-post-separador">
+                    <p class="cat-post-excerpt"><?php echo get_the_excerpt($post->ID)?></p>
+                </div>
             </div>
-        </div>
-        <div class="col-12 col-md-4">
-            <div class="cat-post-wrapper p-1">
-                <h5 class="cat-post-date">20 de fevereiro de 2019</h5>
-                <h1 class="cat-post-title">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
-                <hr class="cat-post-separador">
-                <p class="cat-post-excerpt">Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere [...]</p>
-            </div>
-        </div>
-        <div class="col-12 col-md-4">
-            <div class="cat-post-wrapper p-1">
-                <h5 class="cat-post-date">20 de fevereiro de 2019</h5>
-                <h1 class="cat-post-title">Orgasmo tântrico: saiba como ter orgasmos mais intensos e longos</h1>
-                <hr class="cat-post-separador">
-                <p class="cat-post-excerpt">Vamos ser sinceras, qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere qualquer orgasmo é uma ótima experiência. Eles nos fazem ver estrelas e nos proporcionam sensações maravilhosas, mas o que a maioria das mulhere [...]</p>
-            </div>
-        </div>
+        <?php } ?>
     </div>
 </div>
 </section>
 
+<?php wp_reset_query(); ?>
 <!-- AQUI COMEÇA A LISTAGEM DOS POST -->
 <section>
     <div class="container-fluid">
