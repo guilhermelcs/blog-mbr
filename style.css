@@ -50,13 +50,14 @@ a:hover {
 	animation-duration: 0.2s;
 }
 
-.nav-link.menu {
+ul.navbar-nav li a {
 	color: #dac877 !important;
+	padding-right: 1.3rem;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
 }
 
-.nav-link.menu:hover {
+ul.navbar-nav li a:hover {
 	color: #dfda58 !important;
 }
 
@@ -90,6 +91,7 @@ a:hover {
 .btn.btn-gold {
 	background-color: #dac877;
 	color: #ffffff;
+	height: 60px!important;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 600;
 }
@@ -392,11 +394,7 @@ text-decoration:underline;
 
 .logo-header {
 	max-width: 300px;
-	width: 120px;
-}
-
-.form-input-optin-topo{
-
+	width: 50px;
 }
 
 .optin-campos-form-topo{
@@ -422,7 +420,9 @@ text-decoration:underline;
 	font-size: 0.8em;
 	margin-top: -20px !important;
 }
-
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }
 .main-menu {
 	color: #FFF;
 }
@@ -443,10 +443,17 @@ text-decoration:underline;
 	padding: 7rem 3em 0em 3em;
 }
 
-.categorias-toppost {
-	margin-top: 30px;
-	margin-bottom: 0px !important;
+@media (min-width:769px){
+	.categorias-toppost {
+		margin-top: 30px;
+		margin-bottom: 0px !important;
+	}
+}
 
+@media (max-width:499px){
+	.categorias-toppost{
+		margin-top: 0;
+	}
 }
 
 .nav-link-cat-top-post {
@@ -458,6 +465,10 @@ text-decoration:underline;
 	border-bottom: 2px solid;
 	color: #dfda58 !important;
 	transition: .1s;
+}
+
+span.nav-item-span.mobile {
+	font-size: .9rem;
 }
 
 .cat-top-post-separador {
@@ -614,6 +625,13 @@ h3.post-date {
 	text-align: justify;
 }
 
+@media (max-width:499px) {
+	.cat-post-wrapper {
+		text-align: center;
+	}
+
+}
+
 .cat-post-date.single {
 	color: #b79c49 !important;
 }
@@ -634,7 +652,39 @@ h3.post-date {
 .search-not-found-face {
 	width: 13rem;
 }
+/* 404 Styles */
+.error-template {
+	padding: 40px 15px;
+	text-align: center;
+}
+.error-actions {
+	margin-top:15px;
+	margin-bottom:15px;
+}
+.error-actions .btn { 
+	margin-right:10px; 
+}
 
-.search-not-found-text {
-	
+.error-title {
+	color: #00d4dd;
+	font-size: 3.5rem;
+}
+
+h2.error-title {
+	color: #007cac !important;
+}
+
+.error-details {
+	color: #00d4dd;
+	font-weight: 500
+}
+
+.error-actions .btn {
+	background-image: linear-gradient(-45deg, #0083ed, #00d4e0);
+}
+
+.error-actions .btn:hover {
+	background-image: linear-gradient(45deg, #0083ed, #00d4e0);
+	-webkit-transition: background-image 3s;
+	transition: background-image 3s;
 }

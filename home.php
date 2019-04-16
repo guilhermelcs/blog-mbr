@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <!-- AQUI COMEÇA O FORM DE CAPTURA -->
-<div class="container single-form pt-5 pb-5">
+<div class="container single-form pt-5 pb-3">
     <div class="row mt-5 pt-4">
         <div class="d-none d-md-block col-12 col-md-3"></div>
         <div class="col-12 col-md-6">
@@ -48,10 +48,10 @@ $selected_category = get_category( get_field( 'categories_first_posts_home', 45 
 // var_dump($selected_category->term_id);exit();
 $categorie_posts = get_posts( array(
     'posts_per_page' => 3,
-    'orderby'      => 'name',
-    'order'        => 'ASC',
-    'cat'          => $selected_category->term_id,
-    'category_name'=> $selected_category->name
+    'orderby'        => 'name',
+    'order'          => 'ASC',
+    'cat'            => $selected_category->term_id,
+    'category_name'  => $selected_category->name
 ));
 
 // var_dump($categorie_posts);exit();
@@ -59,6 +59,7 @@ $categorie_posts = get_posts( array(
 <?php wp_reset_query(); ?>
 
 <!-- AQUI COMEÇA A SEÇÃO DE CATEGORIAS -->
+<!-- Para Desktop -->
 <div class="d-none d-md-block container">
     <div class="row">
         <div class="d-none d-md-block col-12 col-md-1"></div>
@@ -85,12 +86,12 @@ $categorie_posts = get_posts( array(
     <div class="row">
         <div class="d-block d-md-none col-12 col-md-1"></div>
             <div class="d-block d-md-none col-12 col-md-10">
-                <nav class="navbar navbar-expand-lg navbar-light categorias-toppost ">
-                    <ul class="navbar-nav m-auto">
+                <nav class="navbar navbar-expand-lg navbar-light categorias-toppost px-0">
+                    <ul class="d-flex d-md-none nav justify-content-center ml-0">
                         <?php foreach($categories as $category) {?>
-                            <li class="nav-item mr-3">
-                                <a class="nav-link nav-link-cat-top-post" href="<?php echo get_category_link( $category->term_id )?>">
-                                    <span class="nav-item-span"><?php echo $category->name ?></span>
+                            <li class="nav-item pr-2 pl-2">
+                                <a class="nav-link nav-link-cat-top-post pl-1 pr-1" href="<?php echo get_category_link( $category->term_id )?>">
+                                    <span class="nav-item-span mobile"><?php echo $category->name ?></span>
                                 </a>
                             </li>
                         <?php }?>
@@ -172,9 +173,21 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
             </div>
         </div>
         <?php }?>
+        <?php 
+            $big = 999999999; // need an unlikely integer
+            $translated = __( '', 'extracatchy' ); // Supply translatable string
+            echo paginate_links( array(
+                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                'format' => '?paged=%#%',
+                'current' => max( 1, get_query_var('paged') ),
+                'total' => $wp_query->max_num_pages,
+             'before_page_number' => '<span class="screen-reader-text">'.$translated.' </span>'
+            ) ); 
+        ?>
         <div class="nav-previous alignleft"><?php previous_posts_link( 'Older posts' ); ?></div>
         <div class="nav-next alignright"><?php next_posts_link( 'Newer posts' ); ?></div>
     </div>
+    <?php post_pagination(); ?>
 <!-- AQUI É A PAGINAÇÃO DOS POSTS -->
 <!--
 <div class="container">
