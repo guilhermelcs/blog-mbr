@@ -1,4 +1,12 @@
 <?php get_header();
+var_dump($author);
+$posts = get_posts(array(
+	'numberposts'	=> -1,
+	'post_type'		=> 'post',
+	'meta_key'		=> 'author_name',
+	'meta_value'	=> 'red'
+));
+
 if ( have_posts() ) : ?>
 <!-- AQUI COMEÇA A LISTAGEM DOS POST -->
 <section>

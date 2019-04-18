@@ -5,8 +5,17 @@
  * Date: 03/04/19
  * Time: 14:24
  */
+global $author;
+
+show_admin_bar( false );
 
 add_theme_support( 'post-thumbnails' );
+
+//Carregando Google Fonts
+function wpb_add_google_fonts() {
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700', false ); 
+}
+add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
 
 //Carregando Scripts
 add_action('wp_enqueue_scripts', 'wpdocs_scripts_method');
@@ -40,17 +49,41 @@ function theme_prefix_setup() {
 }
 add_action( 'after_setup_theme', 'theme_prefix_setup' );
 
+
+$wpex_query = new WP_Query (array(
+	'posts_per_page' => 2,
+	'post_type'      => 'post',
+	'orderby'        => 'date',
+	'orer' => 'DESC',
+));
+
 // Numbered Pagination
-if ( ! function_exists( 'post_pagination' ) ) :
-	function post_pagination() {
-	  global $wp_query;
-	  $pager = 999999999; // need an unlikely integer
-  
-		 echo paginate_links( array(
-			  'base' => str_replace( $pager, '%#%', esc_url( get_pagenum_link( $pager ) ) ),
-			  'format' => '?paged=%#%',
-			  'current' => max( 1, get_query_var('paged') ),
-			  'total' => $wp_query->max_num_pages
-		 ) );
+if ( !function_exists( 'wpex_pagination' ) ) {
+	function wpex_pagination() {
+		$prev_arrow = is_rtl() ? '>' : '<';
+		$next_arrow = is_rtl() ? '<' : '>';
+		
+		global $wp_query, $wpex_query;
+		$total = $wpex_query->max_num_pages;
+		$big = 999999999; // need an unlikely integer
+		if( $total > 1 )  {
+			 if( !$current_page = get_query_var('paged') )
+				 $current_page = 1;
+			 if( get_option('permalink_structure') ) {
+				 $format = 'page/%#%/';
+			 } else {
+				 $format = '&paged=%#%';
+			 }
+			echo paginate_links(array(
+				'base'			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format'		=> $format,
+				'current'		=> max( 1, get_query_var('paged') ),
+				'total' 		=> $total,
+				'mid_size'		=> 3,
+				'type' 			=> 'list',
+				'prev_text'		=> $prev_arrow,
+				'next_text'		=> $next_arrow,
+			 ) );
+		}
 	}
- endif;
+}
