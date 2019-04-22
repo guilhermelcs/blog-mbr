@@ -136,7 +136,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-5 my-auto pb-md-0 pb-5">
-                <div class="blog-post-content-wrapper py-2 py-md-5 pb-3 pb-md-5">
+                <div class="blog-post-content-wrapper py-2 pt-md-5 pb-3 pb-md-0">
 	                <?php $category = get_the_category($post->ID);?>
                     <h5 class="blog-post-date-and-cat px-md-4 pt-2 pl-1 pl-md-3  ">
                         <span class="date"><?php echo get_the_date('j \d\e F \d\e Y').' '?>|</span>
@@ -161,11 +161,11 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
     <!-- Paginação -->
     <div class="container my-5">
         <div class="row">
-            <div class="col-4 col-md-4"></div>
-            <div class="col-4 col-md-4 d-flex justify-content-center">
+            <div class="d-none d-md-block col-12 col-md-4"></div>
+            <div class="col-12 col-md-4 d-flex justify-content-center">
                 <?php wpex_pagination(); ?>
             </div>
-            <div class="col-4 col-md-4"></div>
+            <div class="d-none d-md-block col-12 col-md-4"></div>
         </div>
     </div>
 </section>

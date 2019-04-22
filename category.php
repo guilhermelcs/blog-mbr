@@ -38,9 +38,21 @@ if ( have_posts() ) : ?>
                 </div>
             </div>
         <?php endwhile; ?> 
-        <div class="nav-previous alignleft"><?php previous_posts_link( 'Older posts' ); ?></div>
-        <div class="nav-next alignright"><?php next_posts_link( 'Newer posts' ); ?></div>
     </div>
+    <!-- Paginação -->
+    <?php $count_posts = count_user_posts( get_the_author_meta( 'ID' ) );
+          $posts_per_page = get_option( 'posts_per_page' );
+          if( $count_posts > $posts_per_page ) {  ?>
+            <div class="container my-5">
+                <div class="row">
+                    <div class="col-4 col-md-4"></div>
+                    <div class="col-4 col-md-4 d-flex justify-content-center">
+                        <?php wpex_pagination(); ?>
+                    </div>
+                    <div class="col-4 col-md-4"></div>
+                </div>
+            </div>
+    <?php }?>
 <!-- AQUI É A PAGINAÇÃO DOS POSTS -->
 <!--
 <div class="container">

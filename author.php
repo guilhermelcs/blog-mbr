@@ -1,19 +1,12 @@
 <?php get_header();
-var_dump($author);
-$posts = get_posts(array(
-	'numberposts'	=> -1,
-	'post_type'		=> 'post',
-	'meta_key'		=> 'author_name',
-	'meta_value'	=> 'red'
-));
 
 if ( have_posts() ) : ?>
 <!-- AQUI COMEÇA A LISTAGEM DOS POST -->
 <section>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-md-12 mt-3 mt-md-5 pt-5 pb-1 pb-md-2 text-center text-light">
-                <h2><?php echo single_cat_title( '', false );?></h2>
+            <div class="col-12 col-md-12 mt-5 mt-md-5 pt-5 pb-1 pb-md-2 text-center text-light">
+                <h2>Últimos posts de <?php echo get_field('author_name', $post->ID);?></h2>
             </div>
         </div>
         <?php while ( have_posts() ) : the_post(); ?>
@@ -39,16 +32,27 @@ if ( have_posts() ) : ?>
                         </p>
                         <a href="<?php echo the_permalink($post->ID)?>" class="blog-post-continue-reading px-md-4">
                             Leia mais
-                            <span class="read-more-icon"> <img src="data:image/svg+xml;base64,
-        PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyLjAwOCA1MTIuMDA4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDA4IDUxMi4wMDg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzgxLjA0OCwyNDguNjMzTDE0Ni4zODEsMy4yOTljLTMuMDIxLTMuMTQ2LTcuNjQ2LTQuMTY3LTExLjY4OC0yLjUyMWMtNC4wNDIsMS42MTUtNi42ODgsNS41NDItNi42ODgsOS44OTZ2NDIuNjY3ICAgIGMwLDIuNzI5LDEuMDQyLDUuMzU0LDIuOTE3LDcuMzMzbDE4NS4wNjMsMTk1LjMzM0wxMzAuOTIzLDQ1MS4zNDFjLTEuODc1LDEuOTc5LTIuOTE3LDQuNjA0LTIuOTE3LDcuMzMzdjQyLjY2NyAgICBjMCw0LjM1NCwyLjY0Niw4LjI4MSw2LjY4OCw5Ljg5NmMxLjI5MiwwLjUyMSwyLjY0NiwwLjc3MSwzLjk3OSwwLjc3MWMyLjg1NCwwLDUuNjQ2LTEuMTQ2LDcuNzA4LTMuMjkybDIzNC42NjctMjQ1LjMzMyAgICBDMzg0Ljk4NiwyNTkuMjU4LDM4NC45ODYsMjUyLjc1OCwzODEuMDQ4LDI0OC42MzN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNBMjg4NTEiIGRhdGEtb2xkX2NvbG9yPSIjI0EyODg1Ij48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> </span>
+                            <span class="read-more-icon"> <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyLjAwOCA1MTIuMDA4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDA4IDUxMi4wMDg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzgxLjA0OCwyNDguNjMzTDE0Ni4zODEsMy4yOTljLTMuMDIxLTMuMTQ2LTcuNjQ2LTQuMTY3LTExLjY4OC0yLjUyMWMtNC4wNDIsMS42MTUtNi42ODgsNS41NDItNi42ODgsOS44OTZ2NDIuNjY3ICAgIGMwLDIuNzI5LDEuMDQyLDUuMzU0LDIuOTE3LDcuMzMzbDE4NS4wNjMsMTk1LjMzM0wxMzAuOTIzLDQ1MS4zNDFjLTEuODc1LDEuOTc5LTIuOTE3LDQuNjA0LTIuOTE3LDcuMzMzdjQyLjY2NyAgICBjMCw0LjM1NCwyLjY0Niw4LjI4MSw2LjY4OCw5Ljg5NmMxLjI5MiwwLjUyMSwyLjY0NiwwLjc3MSwzLjk3OSwwLjc3MWMyLjg1NCwwLDUuNjQ2LTEuMTQ2LDcuNzA4LTMuMjkybDIzNC42NjctMjQ1LjMzMyAgICBDMzg0Ljk4NiwyNTkuMjU4LDM4NC45ODYsMjUyLjc1OCwzODEuMDQ4LDI0OC42MzN6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNBMjg4NTEiIGRhdGEtb2xkX2NvbG9yPSIjI0EyODg1Ij48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> </span>
                         </a>
                     </div>
                 </div>
             </div>
         <?php endwhile; ?> 
-        <div class="nav-previous alignleft"><?php previous_posts_link( 'Older posts' ); ?></div>
-        <div class="nav-next alignright"><?php next_posts_link( 'Newer posts' ); ?></div>
     </div>
+    <!-- Paginação -->
+    <?php $count_posts = count_user_posts( get_the_author_meta( 'ID' ) );
+          $posts_per_page = get_option( 'posts_per_page' );
+          if( $count_posts > $posts_per_page ) {  ?>
+            <div class="container my-5">
+                <div class="row">
+                    <div class="d-none d-md-block col-12 col-md-4"></div>
+                    <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <?php wpex_pagination(); ?>
+                    </div>
+                    <div class="d-none d-md-block col-12 col-md-4"></div>
+                </div>
+            </div>
+    <?php }?>
 <!-- AQUI É A PAGINAÇÃO DOS POSTS -->
 <!--
 <div class="container">
